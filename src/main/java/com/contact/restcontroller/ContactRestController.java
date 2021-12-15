@@ -31,6 +31,7 @@ public class ContactRestController {
 	@GetMapping(value = "/getallcontacts")
 	public List<ContactFormBinding> viewContacts(){
 		List<ContactFormBinding> viewContacts = contactService.viewContacts();
+		System.out.println("List of get All Contacts :"+viewContacts);
 		return viewContacts;
 		
 	}
