@@ -16,6 +16,8 @@ import org.hibernate.annotations.UpdateTimestamp;
 @Table(name = "contactTable")
 public class Contact {
 	
+	// Testing....
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")

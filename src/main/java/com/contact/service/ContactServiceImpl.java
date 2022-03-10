@@ -29,7 +29,6 @@ public class ContactServiceImpl implements ContactService {
 		contactForm.setActiveSw("Y");
 		BeanUtils.copyProperties(contactForm, entity);
 		Contact contactObj = contactRepo.save(entity);
-		System.out.println("contactObj :"+contactObj);
 		if(contactObj.getContactId() != null) {
 			
 			return "Contact Saved Successfully";
@@ -58,11 +57,9 @@ public class ContactServiceImpl implements ContactService {
 	@Override
 	public ContactFormBinding editContact(Integer id) {
 		
-		System.out.println("Id :"+id);
 		ContactFormBinding formObj = new ContactFormBinding();
 		
 		Optional<Contact> findById = contactRepo.findById(id);
-		System.out.println("findById :"+findById);
 		if(findById.isPresent()) {
 			Contact contact = findById.get();
 			System.out.println("contact :"+contact);

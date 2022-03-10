@@ -22,33 +22,32 @@ public class ContactRestController {
 	
 	@PostMapping(value = "/save")
 	public String saveContacts(@RequestBody ContactFormBinding contactform) {
-		System.out.println("contactform :"+contactform);
-		String contactSave = contactService.save(contactform);
-		return contactSave;
+		//String contactSave = contactService.save(contactform);
+		return contactService.save(contactform);
 		
 	}
 	
 	@GetMapping(value = "/getallcontacts")
 	public List<ContactFormBinding> viewContacts(){
-		List<ContactFormBinding> viewContacts = contactService.viewContacts();
-		System.out.println("List of get All Contacts :"+viewContacts);
-		return viewContacts;
+		//List<ContactFormBinding> viewContacts = contactService.viewContacts();
+		System.out.println("Method Called from Jmeter...");
+		return contactService.viewContacts();
 		
 	}
 	
 	@GetMapping(value = "/getContact/{id}")
 	public ContactFormBinding editById(@PathVariable("id") Integer id) {
 		
-		ContactFormBinding contactForm = contactService.editContact(id);
-		return contactForm;
+		//ContactFormBinding contactForm = contactService.editContact(id);
+		return contactService.editContact(id);
 		
 	}
 	
 	@DeleteMapping(value = "/deleteContact/{id}")
 	public List<ContactFormBinding> deleteContact(@PathVariable("id") Integer id){
 		
-		List<ContactFormBinding> listofContacts = contactService.deleteContact(id);
-		return listofContacts;
+	//	List<ContactFormBinding> listofContacts = contactService.deleteContact(id);
+		return contactService.deleteContact(id);
 		
 	}
 }

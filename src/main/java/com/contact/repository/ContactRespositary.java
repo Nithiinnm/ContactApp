@@ -1,3 +1,4 @@
+
 package com.contact.repository;
 
 import java.io.Serializable;
@@ -7,7 +8,6 @@ import org.springframework.stereotype.Repository;
 
 import com.contact.entites.Contact;
 
-@Repository
 public interface ContactRespositary extends JpaRepository<Contact, Serializable> {
 	
 	
